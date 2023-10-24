@@ -26,7 +26,7 @@ export default function MCQForm() {
   useEffect(() => {
     fetchQuestions();
     var countDownDate = new Date();
-    countDownDate.setMinutes(countDownDate.getMinutes() + 1);
+    countDownDate.setMinutes(countDownDate.getMinutes() + 30);
 
     const x = setInterval(function () {
       var now = new Date().getTime();
@@ -165,9 +165,9 @@ export default function MCQForm() {
       ) : (
         <div>
           <div id="countdown"></div>
-          {expired ? ( // If time is expired, show "EXPIRED" and score card
+          {expired ? ( // If time is Over, show "OVER" and score card
             <div>
-              <h3>Time's Up! Quiz Expired</h3>
+              <h3>Time's Up! Quiz Over</h3>
               <p>Your Score: {score} out of {questions.length}</p>
             </div>
           ) : currentQuestionIndex < questions.length ? ( // If time is not expired, handle questions
